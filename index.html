@@ -29,6 +29,7 @@
                     class="w-4 h-4 ml-1" viewBox="0 0 24 24">
                     <path d="M12 3v18M3 12h18"></path>
                 </svg>
+
                 <span class="ml-3 text-xl">Article Summarizer</span>
             </a>
             <nav
@@ -49,8 +50,8 @@
 </body>
 <section class="text-gray-600 body-font">
     <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-        <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
-            src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8RGF0YSUyMFNjaWVuY2UlMjA3MDB4NjAwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60">
+        <img class="lg:w-3/6 md:w-4/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+            src="Resources/download.png">
         <div class="text-center lg:w-2/3 w-full">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-small text-gray-900">How to use the Natural Language
                 ToolKit (NLTK) for text summarization?</h1>
@@ -69,8 +70,9 @@
             </p>
             <div class="flex justify-center">
                 <button
-                    class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"><a
-                        href="https://github.com/sarthakchauhan0/sarthakchauhan0.github.io/blob/main/Summarizer.ipynb">Code</a></button>
+                    class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"><a
+                        href="https://github.com/sarthakchauhan0/sarthakchauhan0.github.io/blob/main/Summarizer.ipynb">Check
+                        the code notebook</a></button>
             </div>
         </div>
     </div>
@@ -103,20 +105,6 @@
 <section>
     <div class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;"></div>
     <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;"><b>APPROACH</b></p>
-    <p class="mb-0 leading-relaxed text-align=justify" style="margin-left: 20px;">Firstly, we will load the spaCy model,
-        <a href="https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset"
-            style="color:blue; text-decoration:underline;">Resume Dataset</a>, and <a
-            href="https://github.com/kingabzpro/jobzilla_ai/blob/main/jz_skill_patterns.jsonl"
-            style="color:blue; text-decoration:underline;">Jobzilla skills</a> dataset directly into the entity ruler.
-        We will then randomized Job categories so that 200 samples contain various job categories instead of one. <br>
-        In this tutorial, we will limit our number of samples to 200 as processing 2400+ takes time.<br>
-    </p>
-
-    <pre><code class="python">
-         df = pd.read_csv("Resume.csv")
-         df = df.reindex(np.random.permutation(df.index))
-         data = df.copy().iloc[0:200,]         
-        </code></pre>
 
     <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;"><b> Step 1: Fetch the Article Content
         </b></p>
@@ -296,41 +284,38 @@
         </code></pre>
 
 
-    <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;"><b>stopwords</b>: This resource
-        contains a list
-        of common stop words (words that are frequently occurring and do not carry any meaning, e.g. "the", "and", "is",
-        "a") that are used to remove noise from text data during text preprocessing.<br>
 
-        <section>
-            <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;">
-                <b>CONCLUSION</b></p>
 
-            <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;">In this tutorial, we learned
-                how to
-                summarize text using a simple and effective algorithm. We first fetched the content of a webpage and
-                created a frequency table of its words. Then, we scored each sentence based on the frequency of its
-                non-stop words, found the average score, and generated a summary using a threshold value. Finally, we
-                applied this algorithm to summarize an article on machine learning from Wikipedia. This tutorial
-                demonstrates how we can use basic natural language processing techniques to create a useful
-                summarization tool. However, it is worth noting that more advanced techniques, such as deep
-                learning-based methods, may be necessary for handling larger volumes of text and generating more
-                accurate summaries. <br>
-                <br>
-                If you found the tutorial interesting, here is a bonus for you.<br>
+    <section>
+        <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;">
+            <b>CONCLUSION</b></p>
 
-                <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;"><b> Using BART Transformer
-                        for text
-                        summarization
-                    </b></p>
-                <p class="mb-2 leading-relaxed text-align=justify" style="margin-left: 20px;">This code generates a
-                    summary of a
-                    given
-                    input text using BART (Bidirectional and Auto-Regressive Transformer) transformer. BART is a
-                    state-of-the-art pre-trained language model developed by Facebook AI that can perform a wide range
-                    of natural language processing tasks. The code uses the BART model to generate a summary by first
-                    tokenizing the input text and then generating a summary using beam search. The resulting summary is
-                    decoded from the tokenized summary IDs and returned as a string.<br></p>
-                <pre><code class="python">
+        <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;">In this tutorial, we learned
+            how to
+            summarize text using a simple and effective algorithm. We first fetched the content of a webpage and
+            created a frequency table of its words. Then, we scored each sentence based on the frequency of its
+            non-stop words, found the average score, and generated a summary using a threshold value. Finally, we
+            applied this algorithm to summarize an article on machine learning from Wikipedia. This tutorial
+            demonstrates how we can use basic natural language processing techniques to create a useful
+            summarization tool. However, it is worth noting that more advanced techniques, such as deep
+            learning-based methods, may be necessary for handling larger volumes of text and generating more
+            accurate summaries. <br>
+            <br>
+            If you found the tutorial interesting, here is a bonus for you.<br>
+
+            <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;"><b> Using BART Transformer
+                    for text
+                    summarization
+                </b></p>
+            <p class="mb-2 leading-relaxed text-align=justify" style="margin-left: 20px;">This code generates a
+                summary of a
+                given
+                input text using BART (Bidirectional and Auto-Regressive Transformer) transformer. BART is a
+                state-of-the-art pre-trained language model developed by Facebook AI that can perform a wide range
+                of natural language processing tasks. The code uses the BART model to generate a summary by first
+                tokenizing the input text and then generating a summary using beam search. The resulting summary is
+                decoded from the tokenized summary IDs and returned as a string.<br></p>
+            <pre><code class="python">
                     from transformers import BartTokenizer, TFBartForConditionalGeneration
 
                     def BART_generate_summary(text: str, model_name: str = "facebook/bart-large-cnn") -> str:
@@ -356,66 +341,68 @@
                 </code></pre>
 
 
-            </p>
-        </section>
+        </p>
+    </section>
+    <br>
+    <section>
+        <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;"><b>What makes
+                this
+                tutorial different?</b>
+        </p>
+
+        <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;"> This
+            tutorial is
+            designed to teach how
+            to extract the most important information from a
+            long piece of text and present it in a shorter format. The tutorial is useful in situations where there
+            is a large amount of text that needs to be quickly processed and understood.
+
+            Some common uses of text summarization tutorials and tools include:
+        </p>
+        <ul class="list-disc mb-8 leading-relaxed text-align=justify" style="margin-left: 60px; font-size: 20px;">
+            <li>Summarizing news articles and research papers</li>
+            <li>Creating summaries of legal documents</li>
+            <li>Generating briefs for legal cases</li>
+            <li>Summarizing social media posts</li>
+            <li>Creating product descriptions</li>
+        </ul>
+        <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;">
+            The tutorial is designed to teach how to implement a text summarization tool for the English
+            language. However, the approach can be adapted to work with other languages by modifying the stop word
+            list and stemmer accordingly.
+
+            There are similar tutorials and tools available for text summarization, but each tutorial is unique in
+            its implementation and may focus on different aspects of the summarization process.Majority of the
+            tutorials available use the textRank algorithm for summarization, which may require more computational
+            resources than the other code, particularly for longer texts. On the other hand, this utorial uses a
+            word
+            frequency-based approach to summarization. This method is generally faster than the TextRank algorithm,
+            and can work well when a quick summary is needed.
+
+            One unique feature of the tutorial in is its use of frequency tables to score sentences based on
+            the frequency of their non-stop words. This approach allows the tool to quickly identify the most
+            important sentences in a piece of text, making it a useful tool for summarizing large volumes of
+            information.</p>
         <br>
-        <section>
-            <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;"><b>What makes
-                    this
-                    tutorial different?</b>
-            </p>
-
-            <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;"> This
-                tutorial is
-                designed to teach how
-                to extract the most important information from a
-                long piece of text and present it in a shorter format. The tutorial is useful in situations where there
-                is a large amount of text that needs to be quickly processed and understood.
-
-                Some common uses of text summarization tutorials and tools include:
-            </p>
-            <ul class="list-disc mb-8 leading-relaxed text-align=justify" style="margin-left: 60px; font-size: 20px;">
-                <li>Summarizing news articles and research papers</li>
-                <li>Creating summaries of legal documents</li>
-                <li>Generating briefs for legal cases</li>
-                <li>Summarizing social media posts</li>
-                <li>Creating product descriptions</li>
-            </ul>
-            <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 20px;">
-                The tutorial is designed to teach how to implement a text summarization tool for the English
-                language. However, the approach can be adapted to work with other languages by modifying the stop word
-                list and stemmer accordingly.
-
-                There are similar tutorials and tools available for text summarization, but each tutorial is unique in
-                its implementation and may focus on different aspects of the summarization process.Majority of the
-                tutorials available use the textRank algorithm for summarization, which may require more computational
-                resources than the other code, particularly for longer texts. On the other hand, this utorial uses a
-                word
-                frequency-based approach to summarization. This method is generally faster than the TextRank algorithm,
-                and can work well when a quick summary is needed.
-
-                One unique feature of the tutorial in is its use of frequency tables to score sentences based on
-                the frequency of their non-stop words. This approach allows the tool to quickly identify the most
-                important sentences in a piece of text, making it a useful tool for summarizing large volumes of
-                information.</p>
-            <br>
-    </p>
-</section>
+        </p>
+    </section>
 
 
 
-<section>
-    <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 15px;"><b>References:</b>
-    </p>
+    <section>
+        <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px; font-size: 15px;">
+            <b>References:</b>
+        </p>
 
-    <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;">
-        <a href="https://www.nltk.org/" style="color:blue; text-decoration:underline;">Natural Language Toolkit</a><br>
-        <a href="https://en.wikipedia.org/wiki/Automatic_summarization"
-            style="color:blue; text-decoration:underline;">Automatic Summarization</a><br>
-        <a href="https://huggingface.co/facebook/bart-large-cnn" style="color:blue; text-decoration:underline;">BART
-            large-sized model(fine-tuned on CNN Daily Mail)
-        </a><br>
-    </p>
-</section>
+        <p class="mb-8 leading-relaxed text-align=justify" style="margin-left: 20px;">
+            <a href="https://www.nltk.org/" style="color:blue; text-decoration:underline;">Natural Language
+                Toolkit</a><br>
+            <a href="https://en.wikipedia.org/wiki/Automatic_summarization"
+                style="color:blue; text-decoration:underline;">Automatic Summarization</a><br>
+            <a href="https://huggingface.co/facebook/bart-large-cnn" style="color:blue; text-decoration:underline;">BART
+                large-sized model(fine-tuned on CNN Daily Mail)
+            </a><br>
+        </p>
+    </section>
 
 </html>
